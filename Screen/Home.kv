@@ -1,9 +1,14 @@
 <HomePage>:
+    name: "home"
     md_bg_color: 21/255, 27/255, 48/255, 1
-
     MDBoxLayout:
         orientation: "vertical"
-        spacing: dp(15)  # Adds space between children vertically
+        MDTopAppBar:
+            height: dp(48)
+            size_hint_y: None
+            md_bg_color: 21/255, 27/255, 48/255, 1
+            title: "Home Page"
+
         MDCard:
             md_bg_color: 16/255, 17/255, 24/255, 1
             radius: [0,0,0,0]
@@ -24,7 +29,6 @@
                     font_style: "H6"
                     anchor_x: "left"
                     anchor_y: "top"
-
         # Main Button Grid
         MDGridLayout:
             cols: 2
@@ -33,23 +37,19 @@
             adaptive_height: True
             size_hint_y: None
             height: self.minimum_height
-
             ElementButton:
                 icon: "shield-alert"
                 text: "Report"
-
+                on_release: app.root.current = "reporthub" 
             ElementButton:
                 icon: "clipboard-text"
                 text: "Quiz"
-
             ElementButton:
                 icon: "shield-check"
                 text: "Scam Detector"
-
             ElementButton:
                 icon: "book-open-page-variant"
                 text: "Education Hub"
-
         # Centered Settings Button
         AnchorLayout:
             anchor_x: "center"
@@ -60,33 +60,32 @@
                 text: "Settings"
                 size_hint_x: None
                 width: dp(160)
-
         # Bottom Gap
         Widget:
             size_hint_y: None
             height: dp(10)
 
-
-<ElementButton@MDBoxLayout>:
+<ElementButton@MDCard>:
     md_bg_color: 24/255, 43/255, 62/255, 1
     size_hint: 1, None
     height: dp(120)
-    orientation: "vertical"
     radius: [20, 20, 20, 20]
+    ripple_behavior: True
+    focusable: True
     icon: ""
     text: ""
-
-    AnchorLayout:
-        anchor_x: "center"
-        anchor_y: "center"
-        MDIcon:
-            icon: root.icon
+    MDBoxLayout:
+        orientation: "vertical"
+        AnchorLayout:
+            anchor_x: "center"
+            anchor_y: "center"
+            MDIcon:
+                icon: root.icon
+                theme_text_color: "Custom"
+                text_color: 1, 1, 1, 1
+                font_size: dp(36)
+        MDLabel:
+            text: root.text
+            halign: "center"
             theme_text_color: "Custom"
             text_color: 1, 1, 1, 1
-            font_size: dp(36)
-
-    MDLabel:
-        text: root.text
-        halign: "center"
-        theme_text_color: "Custom"
-        text_color: 1, 1, 1, 1
