@@ -1,17 +1,16 @@
 <HomePage>:
-    MDScreen:
+    MDBoxLayout:
+        size_hint_y:.25
         MDBoxLayout:
-            orientation: 'vertical'
-            spacing: 20
-            padding: 20
-
+            orientation:"vertical"
             MDLabel:
-                text: "Welcome to the Home Page"
-                halign: "center"
-                font_style: "H4"
+                text:"Tip"
+            MDBoxLayout:
+                adaptive_sixe:True
+                MDLabel:
+                    text:"Rep Hub"
+                    text_size:None,None
+                MDIcon:
+                    icon:"shield-alert"
 
-            MDRaisedButton:
-                text: "Go to Settings"
-                pos_hint: {"center_x": 0.5}
-                on_release: app.root.current = 'settings'
-
+            

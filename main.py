@@ -1,6 +1,8 @@
+import Screen.Config as config
+
+config.apply_window_size()
 from kivymd.app import MDApp
 from kivy.uix.screenmanager import ScreenManager
-
 from Screen.Home import HomePage
 
 
