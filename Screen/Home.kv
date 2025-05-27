@@ -1,0 +1,17 @@
+<HomePage>:
+    MDScreen:
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: 20
+            padding: 20
+
+            MDLabel:
+                text: "Welcome to the Home Page"
+                halign: "center"
+                font_style: "H4"
+
+            MDRaisedButton:
+                text: "Go to Settings"
+                pos_hint: {"center_x": 0.5}
+                on_release: app.root.current = 'settings'
+
