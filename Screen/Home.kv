@@ -3,22 +3,33 @@
 
     MDBoxLayout:
         orientation: "vertical"
-        spacing: dp(10)
-        padding: dp(20)
+        spacing: dp(15)  # Adds space between children vertically
+        MDCard:
+            md_bg_color: 16/255, 17/255, 24/255, 1
+            radius: [0,0,0,0]
+            spacing: dp(15)
+            AnchorLayout:
+                anchor_x: "left"
+                anchor_y: "top"
+                MDIcon:
+                    icon: "information"
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1
+                    font_size: dp(24)
+                MDLabel:
+                    text: root.tip_text
+                    padding: [dp(10), 0, dp(10), 0]
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1
+                    font_style: "H6"
+                    anchor_x: "left"
+                    anchor_y: "top"
 
-        # Top bar (e.g., title or tip section)
-        MDBoxLayout:
-            size_hint_y: .25
-            orientation: "vertical"
-            MDLabel:
-                text: "Tip"
-                font_style: "H4"
-                theme_text_color: "Custom"
-                text_color: 1, 1, 1, 1
-
+        # Main Button Grid
         MDGridLayout:
             cols: 2
             spacing: dp(10)
+            padding: dp(5)
             adaptive_height: True
             size_hint_y: None
             height: self.minimum_height
@@ -39,16 +50,22 @@
                 icon: "book-open-page-variant"
                 text: "Education Hub"
 
-        MDRaisedButton:
-            icon:"cog"
-            text: "Settings"
-            md_bg_color: 24/255, 43/255, 62/255, 1
+        # Centered Settings Button
+        AnchorLayout:
+            anchor_x: "center"
             size_hint_y: None
-            height: dp(60)
-            pos_hint: {"center_x": 0.5}
-            size_hint_x: 1
-            font_style: "H6"
-            text_color: 1, 1, 1, 1
+            height: dp(120)
+            ElementButton:
+                icon: "cog"
+                text: "Settings"
+                size_hint_x: None
+                width: dp(160)
+
+        # Bottom Gap
+        Widget:
+            size_hint_y: None
+            height: dp(10)
+
 
 <ElementButton@MDBoxLayout>:
     md_bg_color: 24/255, 43/255, 62/255, 1
@@ -56,8 +73,6 @@
     height: dp(120)
     orientation: "vertical"
     radius: [20, 20, 20, 20]
-    spacing: dp(10)
-    padding: dp(10)
     icon: ""
     text: ""
 
