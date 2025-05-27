@@ -1,16 +1,77 @@
 <HomePage>:
-    MDBoxLayout:
-        size_hint_y:.25
-        MDBoxLayout:
-            orientation:"vertical"
-            MDLabel:
-                text:"Tip"
-            MDBoxLayout:
-                adaptive_sixe:True
-                MDLabel:
-                    text:"Rep Hub"
-                    text_size:None,None
-                MDIcon:
-                    icon:"shield-alert"
+    md_bg_color: 21/255, 27/255, 48/255, 1
 
-            
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing: dp(10)
+        padding: dp(20)
+
+        # Top bar (e.g., title or tip section)
+        MDBoxLayout:
+            size_hint_y: .25
+            orientation: "vertical"
+            MDLabel:
+                text: "Tip"
+                font_style: "H4"
+                theme_text_color: "Custom"
+                text_color: 1, 1, 1, 1
+
+        MDGridLayout:
+            cols: 2
+            spacing: dp(10)
+            adaptive_height: True
+            size_hint_y: None
+            height: self.minimum_height
+
+            ElementButton:
+                icon: "shield-alert"
+                text: "Report"
+
+            ElementButton:
+                icon: "clipboard-text"
+                text: "Quiz"
+
+            ElementButton:
+                icon: "shield-check"
+                text: "Scam Detector"
+
+            ElementButton:
+                icon: "book-open-page-variant"
+                text: "Education Hub"
+
+        MDRaisedButton:
+            icon:"cog"
+            text: "Settings"
+            md_bg_color: 24/255, 43/255, 62/255, 1
+            size_hint_y: None
+            height: dp(60)
+            pos_hint: {"center_x": 0.5}
+            size_hint_x: 1
+            font_style: "H6"
+            text_color: 1, 1, 1, 1
+
+<ElementButton@MDBoxLayout>:
+    md_bg_color: 24/255, 43/255, 62/255, 1
+    size_hint: 1, None
+    height: dp(120)
+    orientation: "vertical"
+    radius: [20, 20, 20, 20]
+    spacing: dp(10)
+    padding: dp(10)
+    icon: ""
+    text: ""
+
+    AnchorLayout:
+        anchor_x: "center"
+        anchor_y: "center"
+        MDIcon:
+            icon: root.icon
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
+            font_size: dp(36)
+
+    MDLabel:
+        text: root.text
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 1, 1, 1, 1
