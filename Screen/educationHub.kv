@@ -33,7 +33,7 @@
                 ElementCard:
                     icon: "security"
                     title_text: "Advance Fee Fraud"
-                    content_text: "Advance Fee Fraud is when someone tricks you into paying upfront for goods, services, or rewards that never arrive. It covers a wide range of scams, but all have the same structure: the promise of something valuable, but only if you first send money. These frauds can include fake loans, false inheritances, bogus prize wins, or phantom property rentals. \nThe fraudster might even pretend to help recover money you’ve already lost to another scam. Example: You get an email saying you’ve inherited a fortune from a relative you’ve never heard of. However, to release the money, you must pay an administrative fee. Once paid, the fraudster disappears—and the inheritance never existed."
+                    content_text: "Advance Fee Fraud is when someone tricks you into paying upfront for goods, services, or rewards that never arrive. It covers a wide range of scams, but all have the same structure: the promise of something valuable, but only if you first send money. These frauds can include fake loans, false inheritances, bogus prize wins, or phantom property rentals. The fraudster might even pretend to help recover money you’ve already lost to another scam. \n\nExample: You get an email saying you’ve inherited a fortune from a relative you’ve never heard of. However, to release the money, you must pay an administrative fee. Once paid, the fraudster disappears and the inheritance never existed."
                 
                 ElementCard:
                     icon: "currency-usd"
@@ -44,6 +44,10 @@
                     icon: "heart-broken"
                     title_text: "Romance Scams"
                     content_text: "Romance scammers create fake profiles on dating sites and social media to build relationships before asking for money. Be cautious of anyone who quickly professes love or has excuses for not meeting."
+                ElementCard:
+                    icon: "application"
+                    title_text: "Authorised Push Payment (APP) Fraud"
+                    content_text: "APP fraud happens when you're tricked into willingly sending money to a fraudster's bank account. This often involves someone impersonating a trusted authority, such as your bank or HMRC. The scammer may say your money is at risk and instruct you to move it to a 'safe account, which is, in fact, theirs. Once the money is gone, it's challenging to recover it. \n\nExample: You receive a call from someone claiming to be from your bank, saying there has been suspicious activity on your account. They urge you to transfer your money to a secure account for safety. Later, you find out this so-called 'secure' account belonged to a criminal."
 
 
 
@@ -70,17 +74,18 @@
         MDIcon:
             icon: root.icon
             theme_icon_color: "Primary"
-            size_hint: None, None
+            halign: "center"
             size: dp(32), dp(32)
 
         MDLabel:
             text: root.title_text
             theme_text_color: "Primary"
             font_style: "H6"
-            size_hint_y: None
+            halign: "center"
+
             height: self.texture_size[1]
             text_size: self.width, None
-            halign: "left"
+
 
     # Content card
     MDCard:
