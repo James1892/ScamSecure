@@ -5,6 +5,7 @@ from kivymd.app import MDApp
 from kivy.uix.screenmanager import ScreenManager
 from Screen.Home import HomePage
 from Screen.ReportHub import ReportPage
+from Screen.educationHub import EducationPage
 
 class HackaburryApp(MDApp):
     def build(self):
@@ -12,6 +13,7 @@ class HackaburryApp(MDApp):
         sm = ScreenManager()
         sm.add_widget(HomePage(name="home"))
         sm.add_widget(ReportPage(name="reporthub"))
+        sm.add_widget(EducationPage(name="educationhub"))
         return sm
 
 
